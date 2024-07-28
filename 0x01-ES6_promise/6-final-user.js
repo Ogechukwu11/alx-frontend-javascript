@@ -13,7 +13,10 @@ export default async function handleProfileSignup(
     result.push({ status: 'fulfilled', value: signup }); 
   }
   catch (error) {
-    result.push({ status: 'rejected', value: error });   
+     result.push({
+      status: 'rejected',
+      value: `Error: ${fileName} cannot be processed`,
+    });   
   }
 
   try {
@@ -21,7 +24,10 @@ export default async function handleProfileSignup(
     result.push({ status: 'fulfilled', value: upload });
   }
   catch (error) {
-    result.push({ status: 'rejected', value: error });
+    result.push({
+      status: 'rejected',
+      value: `Error: ${fileName} cannot be processed`,
+    });
   }
   return result;
 }
