@@ -17,7 +17,7 @@ export default async function handleProfileSignup(
   }
 
   try {
-    const upload = await uploadPhoto(filename);
+    const upload = await uploadPhoto(fileName);
     result.push({ status: 'fulfilled', value: upload });
   }
   catch (error) {
